@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="markup.css">
+
+</head>
+<body>
+<div id="content">
+    <input type="button" onclick="magic()" value="Chơi"
+           style="width: 500px;background: black; height: 500px;
+           border: 2px solid white;font-size: 100px;
+           color: white; border-radius: 50px"></input>
+    <h2 id="s2"></h2>
+</div>
+
+</body>
+<script>
+
+    function magic() {
+        let k = parseInt(prompt('Mời bạn chọn khoảng từ 0 đến'));
+        let secret_num = Math.floor(Math.random() * k);
+        console.log('giá trị:', secret_num);
+        for (let i = 0; i < 3; i++) {
+            let guess = parseInt(prompt(' Mời bạn đoán số:'))
+            if (guess == secret_num && i <= 2) {
+                alert(' you win');
+                break;
+            } else if (i == 2 && guess != secret_num) {
+                alert('thua rồi bạn eiii')
+                break;
+            } else {
+                alert(' Bình tĩnh đoán lại bạn ei')
+            }
+        }
+    }
+</script>
+</html>
